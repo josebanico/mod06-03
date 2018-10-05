@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<title>Lyrics</title>
+</head>
+<body>
+	<input type="number" name="day" id="day">
+	<button onclick="getLyric()">Lyrics</button>
+	<span id="result"></span>
+	<script type="text/javascript">
+		const getLyric = () =>{
+			//input
+			let day=Number(document.getElementById('day').value);
+			let no_error_flag=true;
+			if ((day > 12) || (day < 0)){
+				no_error_flag=false;
+			}
+			if (no_error_flag){
+				switch (day){
+					case 1: 
+						document.getElementById('result').innerHTML="on the first day of christmas";
+						break;
+					case 2: 
+						document.getElementById('result').innerHTML="on the 2nd day of christmas";
+						break;
+					case 3: 
+						document.getElementById('result').innerHTML="on the 3rd day of christmas";
+						break;
+					case 4: 
+						document.getElementById('result').innerHTML="on the 4th day of christmas";
+						break;
+					default:
+						document.getElementById('result').innerHTML="on the" + day + "th day of christmas";
+						break;
+				}
+
+			}else{
+				document.getElementById('result').innerHTML="Invalid Number";
+			}
+		}
+	</script>
+</body>
+</html>
